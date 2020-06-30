@@ -1,0 +1,51 @@
+PODS:
+  - Flutter (1.0.0)
+  - IndoorLocation (1.0.4)
+  - Mapbox-iOS-SDK (5.9.0):
+    - MapboxMobileEvents (= 0.10.2)
+  - MapboxAnnotationExtension (0.0.1-beta.1):
+    - Mapbox-iOS-SDK (~> 5.2)
+  - MapboxMobileEvents (0.10.2)
+  - mapwize (0.0.1):
+    - Flutter
+    - IndoorLocation
+    - MapboxAnnotationExtension (~> 0.0.1-beta.1)
+    - MapwizeSDK (~> 3.0)
+  - MapwizeSDK (3.1.2):
+    - IndoorLocation (= 1.0.4)
+    - Mapbox-iOS-SDK (~> 5.0)
+    - SSZipArchive (= 2.2.2)
+  - SSZipArchive (2.2.2)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - mapwize (from `.symlinks/plugins/mapwize/ios`)
+
+SPEC REPOS:
+  trunk:
+    - IndoorLocation
+    - Mapbox-iOS-SDK
+    - MapboxAnnotationExtension
+    - MapboxMobileEvents
+    - MapwizeSDK
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  mapwize:
+    :path: ".symlinks/plugins/mapwize/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  IndoorLocation: 9812c8c2d499ef25e6146ef90cf23f8d107213a8
+  Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
+  MapboxAnnotationExtension: d66de5561562c9d940153c0135725e671407b781
+  MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
+  mapwize: fc9cf3d146cbd79359f18d17211c04be3b9264f1
+  MapwizeSDK: 7f26f5a4c4619a19782f84273b10fc3154809c3d
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+
+PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+
+COCOAPODS: 1.9.3
