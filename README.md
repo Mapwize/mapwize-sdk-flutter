@@ -38,69 +38,69 @@ If set, center on the place at start.
 
 If set, center on the venue at start.
 
-### onMapCreatedCallback `(MapwizeMapController controller) -> void`
+### `void onMapCreatedCallback(MapwizeMapController controller)`
 
 Called when the widget has been added to the application.
 
-### onMapLoadedCallback: `() -> void`
+### `void onMapLoadedCallback()`
 
 Called when the map is fully loaded and ready to use. Method calls before this are not guarented to work.
 
-### onMapClickCallback `(LatLngFloor) -> void`
+### `void onMapClickCallback(LatLngFloor latLngFloor)`
 
 Called when the user clicks on the map.
 
-### onFloorsChangeCallback: `(List<Floor>) -> void`
+### `void onFloorsChangeCallback:(List<Floor> floors)`
 
 Called when the available floors have changed.
 
-### onFloorChangeCallback: `(Floor) -> void`,
+### `void onFloorChangeCallback(Floor floor)`,
 
 Called when the displayed floor has changed.
 
 ## Available methods
 
-### Future<void> addImage(String name, Uint8List bytes, [bool sdf = false])
+### `Future<void> addImage(String name, Uint8List bytes, [bool sdf = false])`
 
 Add an image to the available images on the Mapbox map. Available images can be then used to display markers on the map.
 
-### Future<Symbol> addSymbol(SymbolOptions options, [Map data])
+### `Future<Symbol> addSymbol(SymbolOptions options, [Map data])`
 
 Add a Symbol to the map using SymbolOptions. You can add custom properties using the data map.
 
-### Future<List<Symbol>> addSymbols(List<SymbolOptions> options, [List<Map> data])
+### `Future<List<Symbol>> addSymbols(List<SymbolOptions> options, [List<Map> data])`
 
 Add multples Symbol to the map using a List of SymbolOptions. You can add custom properties using the data map.
 
-### Future<LatLng> getSymbolLatLng(Symbol symbol)
+### `Future<LatLng> getSymbolLatLng(Symbol symbol)`
 
 Retrieve the coordinates of a given Symbol.
 
-### Future<void> removeSymbol(Symbol symbol)
+### `Future<void> removeSymbol(Symbol symbol)`
 
 Remove the given Symbol.
 
-### Future<void> removeSymbols(Iterable<Symbol> symbols)
+### `Future<void> removeSymbols(Iterable<Symbol> symbols)`
 
 Remove all the given Symbols.
 
-### Future<void> clearSymbols()
+### `Future<void> clearSymbols()`
 
 Remove all the Symbols.
 
-### Future<Line> addLine(LineOptions options, [Map data])
+### `Future<Line> addLine(LineOptions options, [Map data])`
 
 Add a Line to the map using LymbolOptions. You can add custom properties using the data map.
 
-### Future<List<LatLng>> getLineLatLngs(Line line)
+### `Future<List<LatLng>> getLineLatLngs(Line line)`
 
 Retrieve the coordinates of a given Line.
 
-### Future<void> removeLine(Line line)
+### `Future<void> removeLine(Line line)`
 
 Remove the given Line.
 
-### Future<void> clearLines()
+### `Future<void> clearLines()`
 
 Remove all the Lines.
 
