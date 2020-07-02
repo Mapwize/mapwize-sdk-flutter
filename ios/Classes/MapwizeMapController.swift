@@ -127,6 +127,10 @@ class MapwizeMapController: NSObject, FlutterPlatformView, MGLAnnotationControll
                 self.mapView.mapboxMapView.style?.setImage(image, forName: name)
             }
             result(nil)
+        case "map#setFloor":
+            guard let arguments = methodCall.arguments as? [String: Any] else { return }
+            mapView.setFloor(arguments["floorNumber"] as? NSNumber)
+            result(nil)
         default:
             print("Not implemented")
         }
@@ -222,6 +226,11 @@ extension MapwizeMapController: MWZMapViewDelegate {
             let arguments = ["floor":["number":floor!.number, "name": floor!.name]] as [String : Any]
             channel?.invokeMethod("map#onFloorChanged", arguments: arguments)
         }
+    }
+    
+    func mapView(_ mapView: MWZMapView, venueDidEnter venue: MWZVenue) {
+        let arguments = ["venue":venue.toJSONString()] as [String : Any]
+        channel?.invokeMethod("map#onVenueEnter", arguments: arguments)
     }
     
 }

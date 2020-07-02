@@ -1,9 +1,6 @@
 part of mapwize_sdk;
 
-/**
- * https://github.com/tobrun/flutter-mapbox-gl/blob/master
- */
-
+/// Line represents a polyline drawn on the map.
 class Line {
   Line(this._id, this.options, [this._data]);
 

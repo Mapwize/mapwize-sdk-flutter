@@ -27,11 +27,16 @@ abstract class MapwizePlatform {
   final ArgumentCallbacks<Map<String, dynamic>> onMapClickPlatform = ArgumentCallbacks<Map<String, dynamic>>();
   final ArgumentCallbacks<List<Floor>> onFloorsChangePlatform = ArgumentCallbacks<List<Floor>>();
   final ArgumentCallbacks<Floor> onFloorChangePlatform = ArgumentCallbacks<Floor>();
+  final ArgumentCallbacks<Venue> onVenueEnterPlatform = ArgumentCallbacks<Venue>();
 
   Widget buildView(
       Map<String, dynamic> creationParams,
       Function onPlatformViewCreated) {
     throw UnimplementedError('buildView() has not been implemented.');
+  }
+
+  Future<void> setFloor(double floor) async {
+    throw UnimplementedError('setFloor() has not been implemented.');
   }
 
   Future<void> addImage(String name, Uint8List bytes,

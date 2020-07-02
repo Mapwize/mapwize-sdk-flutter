@@ -1,9 +1,5 @@
 part of mapwize_sdk;
 
-/**
- * https://github.com/tobrun/flutter-mapbox-gl/blob/master
- */
-
 typedef void ArgumentCallback<T>(T argument);
 
 class ArgumentCallbacks<T> {

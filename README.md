@@ -26,15 +26,15 @@ This project is available on [pub.dev](https://pub.dev/packages/mapwize_sdk). Fo
 
 The following parameters can be passed to the MapwizeMap constructor.
 
-### apiKey
+### `apiKey`
 
 Must be provided to display the content;
 
-### centerOnPlaceId
+### `centerOnPlaceId`
 
 If set, center on the place at start.
 
-### centerOnVenueId
+### `centerOnVenueId`
 
 If set, center on the venue at start.
 
@@ -58,7 +58,15 @@ Called when the available floors have changed.
 
 Called when the displayed floor has changed.
 
+### `void onVenueEnterCallback(Venue venue)`,
+
+Called when the displayed floor has changed.
+
 ## Available methods
+
+### `Future<void> setFloor(double floor)`
+
+Set the currently displayed floor.
 
 ### `Future<void> addImage(String name, Uint8List bytes, [bool sdf = false])`
 

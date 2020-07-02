@@ -1,9 +1,6 @@
 part of mapwize_sdk;
 
-/**
- * https://github.com/tobrun/flutter-mapbox-gl/blob/master
- */
-
+/// Symbol represents a point at a specified coordinate. You can see it as a marker.
 class Symbol {
   Symbol(this._id, this.options, [this._data]);
 

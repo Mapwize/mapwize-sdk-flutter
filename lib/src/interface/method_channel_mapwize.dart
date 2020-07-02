@@ -41,6 +41,21 @@ class MethodChannelMapwize extends MapwizePlatform {
           onFloorChangePlatform(Floor(number, name));
         }
         break;
+      case 'map#onVenueEnter':
+        debugPrint("Debug ON VENUE ENTER");
+        if (call.arguments == null) {
+          debugPrint("Debug ON VENUE ENTER");
+          onVenueEnterPlatform(null);
+        }
+        else {
+          debugPrint(call.arguments['venue']);
+          json.decode(call.arguments['venue']);
+          debugPrint("COUCOU ${json.decode(call.arguments['venue'])}");
+          Venue venue = Venue.fromJson(json.decode(call.arguments['venue']));
+          debugPrint("Venue venue $venue");
+          onVenueEnterPlatform(venue);
+        }
+        break;
       default:
         throw MissingPluginException();
     }
@@ -74,6 +89,13 @@ class MethodChannelMapwize extends MapwizePlatform {
     }
     return Text(
         '$defaultTargetPlatform is not yet supported by the maps plugin');
+  }
+
+  @override
+  Future<void> setFloor(double floor) async {
+    return await _channel.invokeMethod("map#setFloor", <String, dynamic>{
+      "floorNumber": floor
+    });
   }
 
   @override

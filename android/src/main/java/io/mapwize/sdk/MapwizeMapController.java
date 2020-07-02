@@ -33,6 +33,7 @@ import static io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.platform.PlatformView;
 import io.mapwize.mapwizesdk.api.Floor;
+import io.mapwize.mapwizesdk.api.Venue;
 import io.mapwize.mapwizesdk.core.MapwizeConfiguration;
 import io.mapwize.mapwizesdk.map.ClickEvent;
 import io.mapwize.mapwizesdk.map.MapOptions;
@@ -131,6 +132,26 @@ public class MapwizeMapController
                         methodChannel.invokeMethod("map#onMapClick", arguments);
                     }
                 });
+
+                mapwizeMap.addOnVenueEnterListener(new MapwizeMap.OnVenueEnterListener() {
+                    @Override
+                    public void onVenueEnter(@NonNull Venue venue) {
+                        Log.i("Debug", "ON VENUE ENTER NATIVE");
+                        final Map<String, Object> arguments = new HashMap<>(1);
+                        arguments.put("venue", venue.toJSONString());
+                        methodChannel.invokeMethod("map#onVenueEnter", arguments);
+                    }
+
+                    @Override
+                    public void onVenueWillEnter(@NonNull Venue venue) {
+
+                    }
+
+                    @Override
+                    public void onVenueEnterError(@NonNull Venue venue, @NonNull Throwable throwable) {
+
+                    }
+                });
             }
         });
 
@@ -209,6 +230,11 @@ public class MapwizeMapController
                     result.error("STYLE IS NULL", "The style is null. Has onStyleLoaded() already been invoked?", null);
                 }
                 mapwizeMap.getMapboxMap().getStyle().addImage(methodCall.argument("name"), BitmapFactory.decodeByteArray(methodCall.argument("bytes"),0,methodCall.argument("length")), methodCall.argument("sdf"));
+                result.success(null);
+                break;
+            }
+            case "map#setFloor":{
+                mapwizeMap.setFloor(methodCall.argument("floorNumber"));
                 result.success(null);
                 break;
             }

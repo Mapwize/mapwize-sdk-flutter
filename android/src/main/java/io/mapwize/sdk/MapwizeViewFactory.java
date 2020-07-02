@@ -26,7 +26,7 @@ public class MapwizeViewFactory extends PlatformViewFactory {
             optionsBuilder.centerOnPlace((String)params.get("centerOnPlaceId"));
         }
         if (params.containsKey("centerOnVenueId") && params.get("centerOnVenueId") != null) {
-            optionsBuilder.centerOnPlace((String)params.get("centerOnVenueId"));
+            optionsBuilder.centerOnVenue((String)params.get("centerOnVenueId"));
         }
 
         return new MapwizeMapController(context, messenger, id, (String)params.get("apiKey"), optionsBuilder.build());
